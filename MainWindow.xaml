@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button Content="Fetch Accounts" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="40" Click="FetchAccountsButton_Click"/>
+        <ListBox Name="AccountsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0" Width="500" Height="250" />
 
     </Grid>
 </Window>
