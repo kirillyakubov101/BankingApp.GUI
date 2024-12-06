@@ -22,14 +22,13 @@ namespace BankingApp.GUI
         {
             try
             {
-                // Replace with your actual API URL
+                
                 string apiUrl = "https://localhost:7089/api/account";
 
-                // Make the GET request
+
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
                 response.EnsureSuccessStatusCode();
 
-                // Read and parse the JSON response
                 string jsonResponse = await response.Content.ReadAsStringAsync();
                 var accounts = JsonConvert.DeserializeObject<List<Account>>(jsonResponse);
 
