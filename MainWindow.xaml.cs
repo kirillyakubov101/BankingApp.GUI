@@ -11,52 +11,42 @@ namespace BankingApp.GUI
     public partial class MainWindow : Window
     {
         private readonly HttpClient _httpClient;
+        private static MainWindow instance = null;
+        public static MainWindow Instance
+        {
+            get
+            {
+                if (instance == null) { instance = new MainWindow(); };
+                return instance;
+
+            }
+        }
 
         public MainWindow()
         {
+            if (instance == null)
+            {
+                instance = this;
+            }
+
             InitializeComponent();
             _httpClient = new HttpClient();
         }
 
-        private async void FetchAccountsButton_Click(object sender, RoutedEventArgs e)
+        private void SignUp_ButtonClick(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                // Replace with your actual API URL
-                string apiUrl = "https://localhost:7089/api/account";
+            double currentLeft = this.Left;
+            double currentTop = this.Top;
 
-                // Make the GET request
-                HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
-                response.EnsureSuccessStatusCode();
+            SignupWindow.Instance.Left = currentLeft; SignupWindow.Instance.Top = currentTop;
 
-                // Read and parse the JSON response
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-                var accounts = JsonConvert.DeserializeObject<List<Account>>(jsonResponse);
-
-                if(accounts == null)
-                {
-                    MessageBox.Show("accounts == NULL");
-                }
-
-                // Update the ListBox with account names
-                AccountsListBox.Items.Clear();
-                foreach (var account in accounts)
-                {
-                    AccountsListBox.Items.Add($"ID: {account.Id}, Name: {account.name}");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error fetching accounts: {ex.Message}");
-            }
+            SignupWindow.Instance.Show();
+            this.Hide();
         }
 
-        public class Account
+        private void SignIn_ButtonClick(object sender, RoutedEventArgs e)
         {
-            public int Id { get; set; }
-            public string name { get; set; }
+            
         }
-
-
     }
 }

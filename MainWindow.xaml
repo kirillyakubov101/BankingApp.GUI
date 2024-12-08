@@ -5,10 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankingApp.GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Wednesday Bank" Height="450" Width="800">
     <Grid>
-        <Button Content="Fetch Accounts" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="40" Click="FetchAccountsButton_Click"/>
-        <ListBox Name="AccountsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0" Width="500" Height="250" />
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF86EEF5"/>
+                <GradientStop Color="#FF6152F9" Offset="1"/>
+                <GradientStop Color="#FFB344FB" Offset="0.487"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Welcome to Wednesday Bank" FontSize="24" Margin="25" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" FontFamily="Arial" Opacity="0.85"/>
+            <Button Content="Sign In" Width="200" Height ="45" Margin="10" Click="SignIn_ButtonClick" BorderBrush="#330E41FB" BorderThickness="2,2,2,2" />
 
+            <Button Content="Sign Up" Width="200" Height ="45" Margin="10" Click="SignUp_ButtonClick" BorderBrush="#330E41FB" BorderThickness="2,2,2,2"/>
+        </StackPanel>
     </Grid>
 </Window>
