@@ -46,7 +46,12 @@ namespace BankingApp.GUI
 
         private void SignIn_ButtonClick(object sender, RoutedEventArgs e)
         {
-            
+            double currentLeft = this.Left;
+            double currentTop = this.Top;
+            this.Hide();
+
+            SignIn.Instance.Left = currentLeft; SignIn.Instance.Top = currentTop;
+            SignIn.Instance.Show();
         }
     }
 }

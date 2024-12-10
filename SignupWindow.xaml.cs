@@ -21,13 +21,8 @@ namespace BankingApp.GUI
                 return instance;
             }
         }
-        public SignupWindow()
+        private SignupWindow()
         {
-            if(instance == null)
-            {
-                instance = this;
-            }
-
             InitializeComponent();
         }
 
