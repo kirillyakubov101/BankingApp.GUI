@@ -30,10 +30,11 @@
         <TextBox Name="UserNameTextBox" Grid.Row="0" Grid.Column="1" Width="auto" VerticalAlignment ="Center" FontFamily="Arial" FontSize="16" Height="25"/>
 
         <Label Content="Password:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontFamily="Arial"/>
-        <TextBox Name="PasswordTextBox" Grid.Row="1" Grid.Column="1" Width="auto" VerticalAlignment ="Center" FontFamily="Arial" FontSize="16" Height="25"/>
+        <PasswordBox Name="PasswordTextBox" Grid.Row="1" Grid.Column="1" Width="auto" VerticalAlignment ="Center" FontFamily="Arial" FontSize="16" Height="25"/>
+       
 
         <Button Content="Cancel"  Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Width="100" Height="30" Background="#FFB7B1B1" FontSize="18" Click="Cancel_Click"/>
-        <Button Grid.Column="2" Content="Sign In" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"  Width="100" Height="30" Background="#FFD5F7C3" FontSize="18"/>
+        <Button Grid.Column="2" Content="Sign In" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"  Width="100" Height="30" Background="#FFD5F7C3" FontSize="18" Click="Button_Click"/>
 
     </Grid>
 </Window>
